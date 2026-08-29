@@ -107,7 +107,7 @@ animation = &"run"
 frame_progress = 0.70368844
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=970918775]
-position = Vector2(-0.5, 0)
+position = Vector2(0, 1)
 shape = SubResource("RectangleShape2D_rptwj")
 
 [node name="Polygon2D" type="Polygon2D" parent="." unique_id=734745693]

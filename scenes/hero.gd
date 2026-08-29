@@ -1,6 +1,7 @@
 extends CharacterBody2D
 
 @export var animation: Node
+signal request_tracking
 
 var _momentum: float = 0
 
@@ -26,6 +27,8 @@ func _physics_process(delta: float) -> void:
 		_momentum -= Param.DECCELERATION * delta
 	elif velocity.dot(_direction) >= 0:
 		_momentum += Param.ACCELERATION * delta
+		if _momentum > Param.TRACKING_MOMENTUM:
+			request_tracking.emit()
 		
 		if _momentum < Param.STARTING_MOMENTUM:
 			_momentum = Param.STARTING_MOMENTUM
@@ -38,11 +41,11 @@ func _physics_process(delta: float) -> void:
 
 # Graficos 
 
-var _radius = Param.MIN_RADIUS
+var _radius =  Param.STARTING_MOMENTUM * Param.MOMENTUM_RADIUS_CONVERSION
 
 func _process(delta: float) -> void:
-	_radius = clamp(_momentum, Param.MIN_RADIUS, Param.MAX_RADIUS)
-	
+	_radius = clamp(_momentum * Param.MOMENTUM_RADIUS_CONVERSION, Param.STARTING_MOMENTUM * Param.MOMENTUM_RADIUS_CONVERSION, Param.MAX_RADIUS)
+
 	animation.play("run")
 	
 	queue_redraw()

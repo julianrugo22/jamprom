@@ -1,0 +1,11 @@
+res://scenes/main.tscn
+res://scenes/monster.tscn
+res://scenes/flor_ejemplo.gd
+res://scenes/monster.gd
+res://scenes/bullet.tscn
+res://scenes/bullet.gd
+res://scenes/enemy_manager.gd
+res://scenes/hero.tscn
+res://data/parameters.gd
+res://scenes/camera.gd
+res://scenes/hero.gd

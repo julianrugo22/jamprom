@@ -26,6 +26,7 @@ radius = 122.74319
 
 [node name="Monster" type="CharacterBody2D" unique_id=1455289324]
 scale = Vector2(3, 3)
+collision_layer = 16
 script = ExtResource("1_1cbnp")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1699861462]

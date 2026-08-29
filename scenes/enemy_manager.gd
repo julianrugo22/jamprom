@@ -8,7 +8,7 @@ func _ready() -> void:
 	var new_monster = monster.instantiate()
 	new_monster.fired.connect(_on_monster_fired)
 	
-	new_monster.position = Vector2(100, -100)
+	new_monster.position = Vector2(100, 50)
 	add_child(new_monster)
 	
 
