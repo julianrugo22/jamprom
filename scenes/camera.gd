@@ -18,4 +18,4 @@ func _on_hero_request_tracking() -> void:
 	_deviation = get_parent().velocity * 1/2
 
 func _on_timer_timeout() -> void:
-	print("a")
+	return

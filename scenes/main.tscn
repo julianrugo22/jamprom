@@ -33,6 +33,8 @@ position_smoothing_speed = 3.0
 
 [node name="Timer" type="Timer" parent="World/Hero/Camera" unique_id=84099303]
 
+[node name="Dash_timer" type="Timer" parent="World/Hero" unique_id=1107417719]
+
 [node name="FlorEjemplo" type="Sprite2D" parent="World" unique_id=49240851]
 position = Vector2(22.999985, -2.0000076)
 scale = Vector2(3.0625, 1.9375)

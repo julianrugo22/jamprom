@@ -1,10 +1,33 @@
 extends CharacterBody2D
 
 @export var animation: Node
+@onready var dash_timer = get_children()[1]
 signal request_tracking
 
 var _momentum: float = 0
+var _dash_state = false
+func _normal_movement(_direction,delta):
 
+	if _direction.length() == 0:
+		_momentum -= Param.DECCELERATION * delta
+	elif velocity.dot(_direction) >= 0:
+		_momentum += Param.ACCELERATION * delta
+		if _momentum > Param.TRACKING_MOMENTUM:
+			request_tracking.emit()
+		
+		if _momentum < Param.STARTING_MOMENTUM:
+			_momentum = Param.STARTING_MOMENTUM
+
+	_momentum = clamp(_momentum, 0, Param.MAX_MOMENTUM)
+
+	velocity = _momentum * _direction
+func _dash_attack(_momentum,delta):
+	_momentum -= Param.DECCELERATION * delta
+	
+	
+	
+	_dash_state = false
+	return
 # Fisica y controles
 func _physics_process(delta: float) -> void:
 	
@@ -20,22 +43,15 @@ func _physics_process(delta: float) -> void:
 		
 	if Input.is_action_pressed("ui_down"):
 		_direction += Vector2(0,1)
-		
+	if Input.is_action_pressed("Dash_attack"):
+		_dash_state = true
 	_direction = _direction.normalized()
-	
-	if _direction.length() == 0:
-		_momentum -= Param.DECCELERATION * delta
-	elif velocity.dot(_direction) >= 0:
-		_momentum += Param.ACCELERATION * delta
-		if _momentum > Param.TRACKING_MOMENTUM:
-			request_tracking.emit()
-		
-		if _momentum < Param.STARTING_MOMENTUM:
-			_momentum = Param.STARTING_MOMENTUM
+	if !(_dash_state):
+		_normal_movement(_direction,delta)
+		_dash_state = false
+	else:
+		_dash_attack(_momentum, delta)
 
-	_momentum = clamp(_momentum, 0, Param.MAX_MOMENTUM)
-
-	velocity = _momentum * _direction
 
 	move_and_slide()
 

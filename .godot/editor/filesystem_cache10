@@ -1,25 +1,42 @@
 78098b89c88a74ebe8c20117b8754620
-::res://::1788023690
+::res://::1788034046
 icon.svg::CompressedTexture2D::3815449111528739071::1788023573::1788023690::1::::<><><>0<>0<>b116697479c405a3b06368c0f8a1287a<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
-README.md::TextFile::-1::1788023573::0::1::::<><><>0<>0<><>::
-refe.png::CompressedTexture2D::3843364240956298918::1788023573::1788023690::1::::<><><>0<>0<>490fee59b9c677387c8c17aa53b7057c<>res://.godot/imported/refe.png-512d992a87373444414558607c17afb9.ctex::
-::res://assets/::1788025402
+README.md::TextFile::-1::1788033867::0::1::::<><><>0<>0<><>::
+::res://assets/::1788026282
 Blood Monster_A.png::CompressedTexture2D::3147197094546662204::1788023573::1788023690::1::::<><><>0<>0<>82a94f72c45ccd450a827254700af7b6<>res://.godot/imported/Blood Monster_A.png-4b3a6cde626f84ba1c81dcab8743873e.ctex::
 flor_ejemplo.png::CompressedTexture2D::8080411630558213482::1788023844::1788023849::1::::<><><>0<>0<>39f80c44fc2b53725ee3f4018c522341<>res://.godot/imported/flor_ejemplo.png-4fc7275496c82e37a6f98cf691bd04a1.ctex::
 male_hero_template.png::CompressedTexture2D::2378564353503907951::1788023573::1788023690::1::::<><><>0<>0<>e453ce81947cfdc639726ebb0e7fce5d<>res://.godot/imported/male_hero_template.png-39e6bd7c115779f44a014ac978db94bc.ctex::
+sauce.tscn::PackedScene::519626285076687515::1788026282::0::1::::<><><>0<>0<><>::
 sauce_lloron.png::CompressedTexture2D::6793938018751302636::1788025402::1788025416::1::::<><><>0<>0<>900295dabbfd9380423772310f59b992<>res://.godot/imported/sauce_lloron.png-e82e81f265cec9b58789d9de0f89977e.ctex::
-::res://data/::1788023573
-parameters.gd::GDScript::1984940266601800785::1788023573::0::1::::<>Node<><>0<>0<><>::
-::res://scenes/::1788025355
-bullet.gd::GDScript::191690423081762361::1788025133::0::1::::<>CharacterBody2D<><>0<>0<><>::
-bullet.tscn::PackedScene::8213745322021392810::1788025355::0::1::::<><><>0<>0<><>::uid://bumh5if4xovdf::::res://icon.svg<>uid://cy4d36v4rmgf::::res://scenes/bullet.gd
-camera.gd::GDScript::6934987072913154289::1788023573::0::1::::<>Camera2D<><>0<>0<><>::
+::res://data/::1788033439
+parameters.gd::GDScript::1984940266601800785::1788033439::0::1::::<>Node<><>0<>0<><>::
+::res://scenes/::1788035509
+bullet.gd::GDScript::191690423081762361::1788026544::0::1::::<>CharacterBody2D<><>0<>0<><>::
+bullet.tscn::PackedScene::8213745322021392810::1788026544::0::1::::<><><>0<>0<><>::uid://bumh5if4xovdf::::res://icon.svg<>uid://cy4d36v4rmgf::::res://scenes/bullet.gd
+camera.gd::GDScript::6934987072913154289::1788035084::0::1::::<>Camera2D<><>0<>0<><>::
 camera.tscn::PackedScene::2732117664657968671::1788023573::0::1::::<><><>0<>0<><>::uid://c52mhu2ilxwhd::::res://scenes/camera.gd
 enemy_manager.gd::GDScript::9168007258910352766::1788025355::0::1::::<>Node2D<><>0<>0<><>::
 enemy_manager.tscn::PackedScene::2291461638704066167::1788023573::0::1::::<><><>0<>0<><>::uid://d3vb0fstc8wio::::res://scenes/enemy_manager.gd
-hero.gd::GDScript::5253509853042335560::1788023573::0::1::::<>CharacterBody2D<><>0<>0<><>::
-hero.tscn::PackedScene::8578669499660637877::1788023573::0::1::::<><><>0<>0<><>::uid://85guwe3um8ch::::res://assets/male_hero_template.png<>uid://cg33sl6vt5mp1::::res://scenes/hero.gd
-main.tscn::PackedScene::7693821407255149776::1788025044::0::1::::<><><>0<>0<><>::uid://duhtoy5osi654::::res://scenes/hero.tscn<>uid://be6ptxb7tals6::::res://scenes/camera.tscn<>uid://dnehg1bgxfcjy::::res://assets/flor_ejemplo.png<>uid://7wabknm65rxf::::res://scenes/enemy_manager.tscn<>uid://0g7esoolanh7::::res://scenes/flor_ejemplo.gd
-monster.gd::GDScript::3214516859667635150::1788025133::0::1::::<>CharacterBody2D<><>0<>0<><>::
-monster.tscn::PackedScene::2692385166563325518::1788025042::0::1::::<><><>0<>0<><>::uid://bl2evghwaexj7::::res://scenes/monster.gd<>uid://bk3r42brix6ua::::res://assets/Blood Monster_A.png
+hero.gd::GDScript::5253509853042335560::1788035509::0::1::::<>CharacterBody2D<><>0<>0<><>::
+hero.tscn::PackedScene::8578669499660637877::1788034849::0::1::::<><><>0<>0<><>::uid://85guwe3um8ch::::res://assets/male_hero_template.png<>uid://cg33sl6vt5mp1::::res://scenes/hero.gd
+main.tscn::PackedScene::7693821407255149776::1788035509::0::1::::<><><>0<>0<><>::uid://duhtoy5osi654::::res://scenes/hero.tscn<>uid://be6ptxb7tals6::::res://scenes/camera.tscn<>uid://dnehg1bgxfcjy::::res://assets/flor_ejemplo.png<>uid://7wabknm65rxf::::res://scenes/enemy_manager.tscn<>uid://0g7esoolanh7::::res://scenes/flor_ejemplo.gd
+monster.gd::GDScript::3214516859667635150::1788028392::0::1::::<>CharacterBody2D<><>0<>0<><>::
+monster.tscn::PackedScene::2692385166563325518::1788027146::0::1::::<><><>0<>0<><>::uid://bl2evghwaexj7::::res://scenes/monster.gd<>uid://bk3r42brix6ua::::res://assets/Blood Monster_A.png
 flor_ejemplo.gd::GDScript::1769058412117690034::1788025042::0::1::::<>Sprite2D<><>0<>0<><>::
+::res://sonido/::1788035529
+dash.mp3::AudioStreamMP3::6520279679809738770::1788033867::1788033923::1::::<><><>0<>0<>2df530a5498e72027075f51cd8416c9f<>res://.godot/imported/dash.mp3-69b31ce2d6a15c108edb30b5af0f9650.mp3str::
+death.mp3::AudioStreamMP3::6768290924366048321::1788033867::1788033923::1::::<><><>0<>0<>24878dd2fc25ba5fa8a472413d61299b<>res://.godot/imported/death.mp3-e1fb8214cc1c04f5fbee1c5229d7352a.mp3str::
+del.md::TextFile::-1::1788033867::0::1::::<><><>0<>0<><>::
+error_007.ogg::AudioStreamOggVorbis::6374317289683739516::1788033867::1788033923::1::::<><><>0<>0<>b2f57689ac2c8604f8bfb0e3f056c18e<>res://.godot/imported/error_007.ogg-3756f0427882d110431fd2a1b830016b.oggvorbisstr::
+error_008.ogg::AudioStreamOggVorbis::8515126744647791500::1788033867::1788033923::1::::<><><>0<>0<>f66e4c5b0c22de5ef365d52ff4ed9748<>res://.godot/imported/error_008.ogg-e5f5717241c878208afc98d0d076f466.oggvorbisstr::
+idle.wav::AudioStreamWAV::8985818713909785331::1788033867::1788035529::1::::<><><>0<>0<>436b57bf4ddc3107c7fa0e5595f24aea<>res://.godot/imported/idle.wav-39d40cb2e2ca00b9b336f1bb3e891dd4.sample::
+impact1.mp3::AudioStreamMP3::6210271918888499842::1788033867::1788033923::1::::<><><>0<>0<>359a58093e30b4ca3e061a4baa5ef1c9<>res://.godot/imported/impact1.mp3-4ada54a0b08bea04c9eea040765d8442.mp3str::
+impact2_varios.mp3::AudioStreamMP3::5223267963200478714::1788033867::1788033923::1::::<><><>0<>0<>b699c6d3965650e785f9bbb197f1e382<>res://.godot/imported/impact2_varios.mp3-df0d48f561fb5bc80c6e9678a8e5f5a2.mp3str::
+impact3.mp3::AudioStreamMP3::1894437691874971895::1788033867::1788033923::1::::<><><>0<>0<>19ab583e6f4e4f16fb7fd26fc7468c06<>res://.godot/imported/impact3.mp3-07ff76fefc30674c6d22e4e0785217b0.mp3str::
+melee.wav::AudioStreamWAV::1160459174662004531::1788033867::1788033923::1::::<><><>0<>0<>a9f88e92273fbf7e374766a70460a807<>res://.godot/imported/melee.wav-642f4a38bfd4e68fc4180a4b2af0724c.sample::
+movement.wav::AudioStreamWAV::1932518490601819818::1788033867::1788033923::1::::<><><>0<>0<>2cbe07ee7b75fd3d4d385461cfee9a96<>res://.godot/imported/movement.wav-9105d993b54c943424786a7be531b9b0.sample::
+proyectile.mp3::AudioStreamMP3::8004344230881726589::1788033867::1788033923::1::::<><><>0<>0<>0e0c4d9eb1cc475a6c305935c076f9a9<>res://.godot/imported/proyectile.mp3-a1fa3c1bd1619b6170ce881327749bcd.mp3str::
+sonido fondo no combate (loopear).mp3::AudioStreamMP3::5651577930318912092::1788033867::1788033923::0::::<><><>0<>0<>03e3f8186b3271bcaaee24defd1c77f9<>::
+::res://visual/::1788033923
+del.md::TextFile::-1::1788033867::0::1::::<><><>0<>0<><>::
+visualrefe.png::CompressedTexture2D::8682782040815181068::1788033867::1788033923::1::::<><><>0<>0<>a3b3c248182a0a751e5626a6fb9fc7a4<>res://.godot/imported/visualrefe.png-5781bf7b216b88784dc7de5ba787856e.ctex::
