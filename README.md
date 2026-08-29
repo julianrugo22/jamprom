@@ -18,7 +18,7 @@ aura que hace daño/incendio
 
 == arte
 
-
+jjkj
 
 
 == diseño
