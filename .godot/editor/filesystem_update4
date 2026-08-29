@@ -1,2 +1,3 @@
-res://scenes/hero.tscn
+res://scenes/camera.tscn
+res://scenes/camera.gd
 res://scenes/hero.gd

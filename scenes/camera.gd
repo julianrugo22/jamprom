@@ -14,8 +14,5 @@ func _physics_process(delta: float) -> void:
 	position = _deviation
 	_deviation = Vector2(0,0)
 
-func _on_hero_request_tracking() -> void:
-	_deviation = get_parent().velocity * 1/2
-
 func _on_timer_timeout() -> void:
 	return

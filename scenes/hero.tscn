@@ -1,114 +1,62 @@
 [gd_scene format=3 uid="uid://duhtoy5osi654"]
 
-[ext_resource type="Texture2D" uid="uid://85guwe3um8ch" path="res://assets/male_hero_template.png" id="1_3uyx6"]
-[ext_resource type="Script" uid="uid://cg33sl6vt5mp1" path="res://scenes/hero.gd" id="1_yvbpl"]
+[ext_resource type="PackedScene" uid="uid://be6ptxb7tals6" path="res://scenes/camera.tscn" id="1_w7pyx"]
+[ext_resource type="Texture2D" uid="uid://dnehg1bgxfcjy" path="res://assets/flor_ejemplo.png" id="2_y2sko"]
+[ext_resource type="Script" uid="uid://0g7esoolanh7" path="res://scenes/flor_ejemplo.gd" id="3_mo806"]
+[ext_resource type="PackedScene" uid="uid://7wabknm65rxf" path="res://scenes/enemy_manager.tscn" id="4_n40cg"]
+[ext_resource type="PackedScene" uid="uid://duhtoy5osi654" path="res://scenes/hero.tscn" id="5_txblw"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_yvbpl"]
-atlas = ExtResource("1_3uyx6")
-region = Rect2(0, 0, 128, 128)
+[sub_resource type="GDScript" id="GDScript_sugp2"]
+script/source = "extends Node
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_mv13s"]
-atlas = ExtResource("1_3uyx6")
-region = Rect2(0, 384, 128, 128)
+func _on_monster_fired(bullet: Variant) -> void:
+	add_child(bullet)"
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_w7pyx"]
-atlas = ExtResource("1_3uyx6")
-region = Rect2(128, 384, 128, 128)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5o8sy"]
+radius = 17.0
+height = 34.0
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_y2sko"]
-atlas = ExtResource("1_3uyx6")
-region = Rect2(256, 384, 128, 128)
+[node name="Root" type="Node2D" unique_id=1971893189]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_mo806"]
-atlas = ExtResource("1_3uyx6")
-region = Rect2(384, 384, 128, 128)
+[node name="World" type="Node2D" parent="." unique_id=564217354]
+unique_name_in_owner = true
+script = SubResource("GDScript_sugp2")
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_n40cg"]
-atlas = ExtResource("1_3uyx6")
-region = Rect2(512, 384, 128, 128)
+[node name="Hero" parent="World" unique_id=280822861 instance=ExtResource("5_txblw")]
+position = Vector2(1, 1)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_txblw"]
-atlas = ExtResource("1_3uyx6")
-region = Rect2(640, 384, 128, 128)
+[node name="Camera" parent="World/Hero" unique_id=694021235 instance=ExtResource("1_w7pyx")]
+position = Vector2(-6, -2)
+process_callback = 0
+position_smoothing_enabled = true
+position_smoothing_speed = 3.0
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_n5qna"]
-atlas = ExtResource("1_3uyx6")
-region = Rect2(768, 384, 128, 128)
+[node name="Timer" type="Timer" parent="World/Hero/Camera" unique_id=84099303]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_d6xj2"]
-atlas = ExtResource("1_3uyx6")
-region = Rect2(896, 384, 128, 128)
+[node name="Charge_timer" type="Timer" parent="World/Hero" unique_id=1542644277]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_sryfu"]
-atlas = ExtResource("1_3uyx6")
-region = Rect2(1024, 384, 128, 128)
+[node name="Dash_timer" type="Timer" parent="World/Hero" unique_id=200993545]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_6mqrs"]
-atlas = ExtResource("1_3uyx6")
-region = Rect2(1152, 384, 128, 128)
+[node name="FlorEjemplo" type="Sprite2D" parent="World" unique_id=49240851]
+position = Vector2(22.999985, -2.0000076)
+scale = Vector2(3.0625, 1.9375)
+texture = ExtResource("2_y2sko")
+script = ExtResource("3_mo806")
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_rptwj"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_yvbpl")
-}],
-"loop": 1,
-"name": &"default",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_mv13s")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_w7pyx")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_y2sko")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_mo806")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_n40cg")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_txblw")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_n5qna")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_d6xj2")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_sryfu")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_6mqrs")
-}],
-"loop": 1,
-"name": &"run",
-"speed": 20.0
-}]
+[node name="StaticBody2D" type="StaticBody2D" parent="World/FlorEjemplo" unique_id=1110265046]
+position = Vector2(-6.2040815, -4.6451616)
+scale = Vector2(0.3265306, 0.516129)
+collision_layer = 4
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_rptwj"]
-size = Vector2(21, 32)
-
-[node name="Hero" type="CharacterBody2D" unique_id=280822861 node_paths=PackedStringArray("animation")]
-script = ExtResource("1_yvbpl")
-animation = NodePath("AnimatedSprite2D")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2097021617]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/FlorEjemplo/StaticBody2D" unique_id=1578185834]
 visible = false
-sprite_frames = SubResource("SpriteFrames_rptwj")
-animation = &"run"
-frame_progress = 0.70368844
+position = Vector2(16.5, 8.5)
+shape = SubResource("CapsuleShape2D_5o8sy")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=970918775]
-position = Vector2(0, 1)
-shape = SubResource("RectangleShape2D_rptwj")
+[node name="Enemy_manager" parent="." unique_id=2003751319 instance=ExtResource("4_n40cg")]
+position = Vector2(4, -1)
 
-[node name="Polygon2D" type="Polygon2D" parent="." unique_id=734745693]
-polygon = PackedVector2Array(0, 0, 10, 0)
+[connection signal="request_tracking" from="World/Hero" to="World/Hero/Camera" method="_on_hero_request_tracking"]
+[connection signal="timeout" from="World/Hero/Camera/Timer" to="World/Hero/Camera" method="_on_timer_timeout"]
+[connection signal="timeout" from="World/Hero/Charge_timer" to="World/Hero" method="_on_timer_timeout"]
+[connection signal="timeout" from="World/Hero/Dash_timer" to="World/Hero" method="_on_dashing_timeout"]
