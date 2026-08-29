@@ -2,6 +2,7 @@ extends CharacterBody2D
 
 @export var animation: Node
 @onready var dash_timer = $Timer
+signal request_tracking
 
 var _momentum: float = 0
 var _dash_state = false
