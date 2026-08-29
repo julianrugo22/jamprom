@@ -1,2 +1,3 @@
 res://scenes/hero.gd
 res://scenes/main.tscn
+res://data/parameters.gd

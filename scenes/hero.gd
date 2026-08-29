@@ -8,11 +8,18 @@ var _momentum: float = 0
 var _dash_state = false
 var _dash_charged = false
 func _normal_movement(_direction,delta):
-
+	var _instant_acceleration = 0 
+	var _instant_decceleration = 0
+	for i in range(len(Param.BREAKPOINT_SPEEDS)):
+		if Param.BREAKPOINT_SPEEDS[i] > _momentum:
+			continue
+		_instant_acceleration = Param.INSTANT_ACCELERATION[i]
+		_instant_decceleration = Param.INSTANT_DECCELERATION[i]
+		break
 	if _direction.length() == 0:
-		_momentum -= Param.DECCELERATION * delta
+		_momentum -= 	_instant_decceleration * delta
 	elif velocity.dot(_direction) >= 0:
-		_momentum += Param.ACCELERATION * delta
+		_momentum += _instant_acceleration * delta
 		if _momentum > Param.TRACKING_MOMENTUM:
 			request_tracking.emit()
 		
@@ -23,7 +30,6 @@ func _normal_movement(_direction,delta):
 
 	velocity = _momentum * _direction
 func _movement_while_charging(_momentum,delta):
-	_momentum -= Param.DECCELERATION * delta
 	
 	
 	

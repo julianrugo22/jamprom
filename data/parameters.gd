@@ -1,5 +1,8 @@
 extends Node
 
+var BREAKPOINT_SPEEDS = [0] 
+var INSTANT_ACCELERATION = [420] 
+var INSTANT_DECCELERATION = [500]
 var MAX_RADIUS: float = 500
 var MAX_MOMENTUM: float = 500
 var STARTING_MOMENTUM: float = 200
