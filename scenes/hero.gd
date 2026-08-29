@@ -37,8 +37,11 @@ func _normal_movement(_direction,delta):
 	
 	
 # Fisica y controles
-func _dash_attack(dash_direction):
-	velocity = dash_direction * Param.DASH_SPEED
+func _dash_attack(dash_direction,direction):
+	var _new_direction = dash_direction 
+	if dash_direction.dot(direction) >= 0:
+		_new_direction = ((dash_direction + direction*(Param.DIRECTION_ADJUSTMENT))).normalized()
+	velocity = _new_direction * Param.DASH_SPEED 
 	
 	
 func _physics_process(delta: float) -> void:
@@ -67,7 +70,7 @@ func _physics_process(delta: float) -> void:
 			
 
 	if _is_dashing:
-		_dash_attack(_dash_direction)
+		_dash_attack(_dash_direction,_direction)
 		
 	else:
 		_normal_movement(_direction,delta)
