@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://bemhgqa1bihxu"]
+
+[ext_resource type="Script" uid="uid://bl2evghwaexj7" path="res://scenes/monster.gd" id="1_1cbnp"]
+[ext_resource type="Texture2D" uid="uid://bk3r42brix6ua" path="res://assets/Blood Monster_A.png" id="1_uwnm8"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1cbnp"]
+atlas = ExtResource("1_uwnm8")
+region = Rect2(0, 0, 100, 100)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rptwj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1cbnp")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rptwj"]
+size = Vector2(20, 15)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_rptwj"]
+radius = 122.74319
+
+[node name="Monster" type="CharacterBody2D" unique_id=1455289324]
+scale = Vector2(3, 3)
+script = ExtResource("1_1cbnp")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1699861462]
+sprite_frames = SubResource("SpriteFrames_rptwj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=445274384]
+position = Vector2(2, 0)
+shape = SubResource("RectangleShape2D_rptwj")
+
+[node name="DetectionRange" type="Area2D" parent="." unique_id=961359797]
+collision_layer = 8
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionRange" unique_id=2080743093]
+shape = SubResource("CircleShape2D_rptwj")
+
+[node name="Timer" type="Timer" parent="." unique_id=1325263817]
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

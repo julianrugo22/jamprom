@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://dhu7d5mfju5tc"]
+
+[ext_resource type="PackedScene" uid="uid://duhtoy5osi654" path="res://scenes/hero.tscn" id="1_o5qli"]
+[ext_resource type="PackedScene" uid="uid://be6ptxb7tals6" path="res://scenes/camera.tscn" id="1_sugp2"]
+[ext_resource type="PackedScene" uid="uid://7wabknm65rxf" path="res://scenes/enemy_manager.tscn" id="3_jyhfs"]
+
+[sub_resource type="GDScript" id="GDScript_sugp2"]
+script/source = "extends Node
+
+func _on_monster_fired(bullet: Variant) -> void:
+	add_child(bullet)"
+
+[node name="Root" type="Node2D" unique_id=1971893189]
+
+[node name="World" type="Node2D" parent="." unique_id=564217354]
+unique_name_in_owner = true
+script = SubResource("GDScript_sugp2")
+
+[node name="Hero" parent="World" unique_id=280822861 instance=ExtResource("1_o5qli")]
+
+[node name="Enemy_manager" parent="." unique_id=2003751319 instance=ExtResource("3_jyhfs")]
+
+[node name="Camera" parent="." unique_id=694021235 instance=ExtResource("1_sugp2")]

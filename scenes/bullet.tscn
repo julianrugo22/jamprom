@@ -1,0 +1,54 @@
+[gd_scene format=3 uid="uid://dpa2gklmx40mw"]
+
+[ext_resource type="Texture2D" uid="uid://bumh5if4xovdf" path="res://icon.svg" id="1_mkf8s"]
+[ext_resource type="Script" uid="uid://cy4d36v4rmgf" path="res://scenes/bullet.gd" id="1_y25gk"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rptwj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_mkf8s")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t46hp"]
+size = Vector2(128, 130)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_rptwj"]
+
+[sub_resource type="Gradient" id="Gradient_y25gk"]
+interpolation_mode = 1
+offsets = PackedFloat32Array(0, 0.96385545, 0.9879518, 1)
+colors = PackedColorArray(0.34631565, 0.0816002, 0.18651795, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_t46hp"]
+gradient = SubResource("Gradient_y25gk")
+width = 10
+height = 10
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.5, 0)
+
+[node name="Bullet" type="CharacterBody2D" unique_id=1066256117]
+script = ExtResource("1_y25gk")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=408645732]
+visible = false
+sprite_frames = SubResource("SpriteFrames_rptwj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1513033793]
+shape = SubResource("RectangleShape2D_t46hp")
+disabled = true
+
+[node name="Area2D" type="Area2D" parent="." unique_id=743521121]
+collision_layer = 8
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=88560930]
+shape = SubResource("CircleShape2D_rptwj")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1085654193]
+texture = SubResource("GradientTexture2D_t46hp")
