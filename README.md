@@ -12,7 +12,7 @@ top down movimiento shooter/bullet hell limite de tiempo,
  
  cuanto mas rapido vas mas lejos podes ver (fov)
 
-aura que hace daño/incendio 
+aura que hace daño/incendio (importante farmear aura)
 
  
 
