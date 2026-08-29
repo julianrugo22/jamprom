@@ -21,7 +21,7 @@ func _normal_movement(_direction,delta):
 		
 		
 	if _direction.length() == 0:
-		_momentum -= 	_instant_decceleration * delta
+		_momentum -= _instant_decceleration * delta
 	elif velocity.dot(_direction) >= 0:
 		_momentum += _instant_acceleration * delta
 		if _momentum < Param.STARTING_MOMENTUM:
