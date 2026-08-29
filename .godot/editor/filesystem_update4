@@ -1,2 +1,5 @@
-res://scenes/hero.tscn
+res://scenes/camera.gd
 res://scenes/hero.gd
+res://scenes/main.tscn
+res://scenes/hero.tscn
+res://data/parameters.gd

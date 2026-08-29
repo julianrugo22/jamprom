@@ -33,7 +33,9 @@ position_smoothing_speed = 3.0
 
 [node name="Timer" type="Timer" parent="World/Hero/Camera" unique_id=84099303]
 
-[node name="Timer" type="Timer" parent="World/Hero" unique_id=1542644277]
+[node name="Charge_Timer" type="Timer" parent="World/Hero" unique_id=1542644277]
+
+[node name="Dash_Timer" type="Timer" parent="World/Hero" unique_id=96356411]
 
 [node name="FlorEjemplo" type="Sprite2D" parent="World" unique_id=49240851]
 position = Vector2(22.999985, -2.0000076)
@@ -56,4 +58,5 @@ position = Vector2(4, -1)
 
 [connection signal="request_tracking" from="World/Hero" to="World/Hero/Camera" method="_on_hero_request_tracking"]
 [connection signal="timeout" from="World/Hero/Camera/Timer" to="World/Hero/Camera" method="_on_timer_timeout"]
-[connection signal="timeout" from="World/Hero/Timer" to="World/Hero" method="_on_timer_timeout"]
+[connection signal="timeout" from="World/Hero/Charge_Timer" to="World/Hero" method="_on_timer_timeout"]
+[connection signal="timeout" from="World/Hero/Dash_Timer" to="World/Hero" method="_on_dash_timer_timeout"]

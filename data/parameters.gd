@@ -1,5 +1,9 @@
 extends Node
 
+
+var CHARGING_TIMER:float = 2
+var DASH_TIMER:float = 1
+var DASH_SPEED = 800
 var BREAKPOINT_SPEEDS = [0] 
 var INSTANT_ACCELERATION = [420] 
 var INSTANT_DECCELERATION = [500]
