@@ -1,6 +1,6 @@
 extends Node
 
-
+var DIRECTION_ADJUSTMENT:float = 0.4
 var CHARGING_TIMER:float = 2
 var DASH_TIMER:float = 1
 var DASH_SPEED = 800

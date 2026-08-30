@@ -1,10 +1,11 @@
 extends CharacterBody2D
-
+var _direction: Vector2 = Vector2(0,0)
 @export var animation: Node
 @onready var _charge_timer = $Charge_Timer
 @onready var _dash_timer = $Dash_Timer
 signal request_tracking
-
+var CARDINALS_NAMES = ["n", "ne", "e", "se", "s", "sw", "w", "nw"] 
+var CARDINALS_VECTORS = [ Vector2(0,-1), Vector2(1,-1).normalized(), Vector2(1,0), Vector2(1,1).normalized(), Vector2(0,1), Vector2(-1,1).normalized(), Vector2(-1,0), Vector2(-1,-1).normalized() ]
 var _momentum: float = 0
 var _is_dashing = false
 var _dash_charged = false
@@ -45,8 +46,8 @@ func _dash_attack(dash_direction,direction):
 	
 	
 func _physics_process(delta: float) -> void:
+	_direction = Vector2(0,0)
 	
-	var _direction: Vector2 = Vector2(0,0)
 	if Input.is_action_pressed("ui_right"):
 		_direction += Vector2(1,0)
 	
@@ -83,14 +84,26 @@ var _radius =  Param.STARTING_MOMENTUM * Param.MOMENTUM_RADIUS_CONVERSION
 func _process(delta: float) -> void:
 	_radius = clamp(_momentum * Param.MOMENTUM_RADIUS_CONVERSION, Param.STARTING_MOMENTUM * Param.MOMENTUM_RADIUS_CONVERSION, Param.MAX_RADIUS)
 
-	animation.play("run")
+	var _animation_name = "idle_"
+
+	if _momentum == 0:
+		_animation_name = "idle_"
+	else:
+		_animation_name = "run_"
+		
+		#animation.play("run")
+
+	for i in range(8):
+		if _direction == CARDINALS_VECTORS[i]:
+			animation.play(_animation_name + CARDINALS_NAMES[i])
+
 	
 	queue_redraw()
 	
 	
 
 func _draw():
-	draw_circle(Vector2.ZERO, _radius, Color.ORANGE)
+	draw_circle(Vector2.ZERO, _radius, Color.WHITE)
 
 
 func _on_timer_timeout() -> void:
