@@ -10,18 +10,26 @@ ruido ambiente (gas saliendo)
 
 
 
-var BREAKPOINT_SPEEDS = [0]
-var INSTANT_ACCELERATION = [420]
-var INSTANT_DECCELERATION = [500]
 
+var _animation_name = "idle"
 
-
-var _instant_acceleration = 0
-var _instant_decceleration = 0
+	if _momentum == 0:
+		_animation_name = "idle"
+	else:
+		_animation_name = "run"
+		
+		animation.play("run")
 	
-	for i in range(len(Param.BREAKPOINT_SPEEDS)):
-		if Param.BREAKPOINT_SPEEDS[i] > _momentum:
-			continue
-		_instant_acceleration = Param.INSTANT_ACCELERATION[i]
-		_instant_decceleration = Param.INSTANT_DECCELERATION[i]
-		break
+	for i in range(8):
+		if _direction == Constants.CARDINALS_VECTORS[i]:
+			animation.play(_animation_name + Constants.CARDINALS_NAMES[i])
+
+
+
+extends Node
+
+var CARDINALS_NAMES = ["N", "NE", "E", "SE", "S", "SW", "W", "NW"]
+var CARDINALS_VECTORS = [
+	Vector2(0,-1), Vector2(1,-1).normalized(), Vector2(1,0), Vector2(1,1).normalized(),
+	Vector2(0,1), Vector2(-1,1).normalized(), Vector2(-1,0), Vector2(-1,-1).normalized()
+]
